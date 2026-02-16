@@ -1,5 +1,5 @@
 
-import { Zodiac, ToneType } from './types';
+import { Zodiac, ToneType, DurationType } from './types';
 
 export const ZODIACS: { id: Zodiac; label: string; image: string }[] = [
   { id: 'Tý', label: 'Tuổi Tý', image: 'https://picsum.photos/seed/rat/200' },
@@ -18,26 +18,43 @@ export const ZODIACS: { id: Zodiac; label: string; image: string }[] = [
 
 export const TONES: ToneType[] = ['Thấu Hiểu', 'Cảnh Báo', 'Động Viên', 'Hào Hùng'];
 
-export const MYSTICAL_TOPICS = [
-  "Cái nết lo toan, vun vén, tự làm khổ mình vì lo cho người khác quá nhiều",
-  "Nỗi khổ khi mạnh mẽ bên ngoài nhưng cô độc bên trong, không ai thấu hiểu",
-  "Sướng trước khổ sau hay khổ trước sướng sau: Quy luật bù trừ của nhân thế",
-  "Sự vất vả gánh vác gia đình, làm ra mười lo cho người hết chín, không dám hưởng thụ",
-  "Tại sao lòng tốt của con thường bị lợi dụng, sống hết mình nhưng nhận lại sự thờ ơ",
-  "Vận trình năm 2026: Vận tiền xoay mạnh, những cảnh báo quan trọng để giữ lại phúc đức",
-  "Lý do làm lụng vất vả cả đời mà tiền bạc vẫn thất thoát, 'tiền vào cửa trước ra cửa sau'",
-  "Sự thay đổi vận mệnh khi tâm an, bớt cả nể và bắt đầu biết yêu thương bản thân mình"
+export const DURATIONS: DurationType[] = ['1 phút', '1.5 phút', '2 phút', '3 phút'];
+
+// Danh sách gợi ý sản phẩm (để điền nhanh)
+export const PRODUCT_SUGGESTIONS = [
+  "Không bán hàng",
+  "Vòng Chu Sa",
+  "Trầm Hương Tự Nhiên",
+  "Tỳ Hưu Giữ Lộc",
+  "Lá Bồ Đề Mạ Vàng"
 ];
 
-export const SYSTEM_PROMPT = `Bạn là một chuyên gia phong thủy, một người thầy (xưng "Thầy", gọi người đọc là "con"). 
-NHIỆM VỤ: Viết kịch bản AUDIO dài khoảng 2 phút (khoảng 350-450 từ) về tử vi và nhân tâm (khổ, sướng, vận hạn).
+// Các Hook mẫu theo yêu cầu người dùng
+export const MYSTICAL_TOPICS = [
+  "Cái nết của tuổi [X] là lo toan, hay nghĩ cho người khác...",
+  "Hai tuổi dễ giàu nhất năm 2026 gọi tên [X] và...",
+  "Đừng có ép người tuổi [X], đừng thấy họ hiền mà lấn tới...",
+  "Tuổi [X] mà lấy phải những con giáp sau thì khổ cả đời...",
+  "Dự báo tháng tới của [X]: Tiền vào cửa trước, luồn ra cửa sau...",
+  "Tại sao tuổi [X] tốt bụng nhưng đường tình duyên lại lận đận?",
+  "Bề ngoài tuổi [X] hay cười, nhưng đêm về mới thấm cảnh cô độc..."
+];
 
-PHONG CÁCH BẮT BUỘC:
-1. GỢI Ý NHẠC NỀN: Bắt đầu bài viết bằng một dòng gợi ý nhạc nền trong ngoặc đơn, ví dụ: "(Nhạc nền: Tiếng đàn tranh hoặc sáo trúc trầm buồn, da diết, tạo cảm giác tĩnh lặng và suy tư)".
-2. NGÔN NGỮ TÂM TÌNH: Văn phong nói, thong thả, thấm thía. Dùng từ mộc mạc: "vun vén", "chịu thương chịu khó", "lo đủ thứ", "nuốt vào lòng", "cày cuốc", "gánh vác như con tằm nhả tơ", "nước mắt chảy ngược".
-3. CẤU TRÚC KỊCH BẢN (DÀI 2 PHÚT):
-   - Mở đầu: Nói về bản tính "cái nết" và những nỗi vất vả thầm kín của con giáp đó. 
-   - Giữa bài: Kêu gọi tương tác: "Nếu con là tuổi [Con giáp] đang nghe tới đây, thả nhẹ một cái tim và bình luận 'con tuổi [Con giáp]' để thầy biết con đang nghe nhé."
-   - Nội dung chính: Phân tích sâu về sự "Khổ" (hy sinh, vất vả) và "Sướng" (phúc đức, hậu vận).
-   - Kết bài: Dự báo năm 2026 và lời dặn tâm huyết về việc giữ tâm an.
-4. KHÔNG quảng cáo sản phẩm, không gạch đầu dòng. Kịch bản phải liên tục, giàu cảm xúc.`;
+export const SYSTEM_PROMPT = `Bạn là một chuyên gia phong thủy uy tín, chuyên viết lời thoại (spoken word) cho video ngắn.
+NHIỆM VỤ: Viết nội dung kịch bản video TikTok/Reels.
+
+QUY TẮC TRÌNH BÀY QUAN TRỌNG (BẮT BUỘC):
+1. CHỈ XUẤT NỘI DUNG LỜI THOẠI.
+2. TUYỆT ĐỐI KHÔNG viết tiêu đề (như "Phần 1: Hook", "Thân bài", "Lời kết", "Kịch bản...").
+3. TUYỆT ĐỐI KHÔNG viết lời chào của AI (như "Chào con, đây là kịch bản...", "Dưới đây là nội dung...").
+4. Viết liền mạch như một bài nói chuyện tâm tình, thủ thỉ.
+
+CẤU TRÚC NỘI DUNG (NGẦM HIỂU - KHÔNG GHI RA):
+- Mở đầu: Vào thẳng vấn đề bằng cách gọi tên tuổi hoặc nỗi đau (Hook).
+- Thân bài: Đọc vị, thấu cảm, mô tả tính cách, dự báo tương lai.
+- Giải pháp: Khéo léo lồng ghép vật phẩm (nếu có) hoặc lời khuyên tu tâm.
+- Kết bài: Kêu gọi hành động (thỉnh vật phẩm hoặc thả tim).
+
+YÊU CẦU VĂN PHONG:
+- Giọng nói thâm trầm, mộc mạc, giàu cảm xúc (dùng từ: "cày cuốc", "nuốt ngược nước mắt", "vun vén").
+- Không văn vở sáo rỗng, phải đời và thấm.`;
